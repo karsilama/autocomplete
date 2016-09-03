@@ -1,0 +1,24 @@
+{
+  "name": "autocomplete",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Mytypeahead.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karsilama/typeahead.git"
+  },
+  "author": "jesuscolavita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karsilama/typeahead/issues"
+  },
+  "homepage": "https://github.com/karsilama/typeahead#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-3-typeahead": "^4.0.1",
+    "jquery": "^1.9.1"
+  }
+}

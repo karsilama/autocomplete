@@ -1,0 +1,47 @@
+<!--
+
+	1)
+  	install dependences
+
+	3)
+		new Mytypeahead ( {
+			table  						: "", db table
+			field  						: "", // db field name
+			selector					: "", // input search
+			url 							: "", // prefilter elements
+			minLength					: 4
+		} )
+-->
+
+<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script charset="UTF-8" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script charset="UTF-8" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script charset="UTF-8" src="node_modules/bootstrap-3-typeahead/bootstrap3-typeahead.min.js"></script>
+
+<script charset="UTF-8" src="Mytypeahead.js"></script>
+
+<div id="custom-search-input">
+		<div class="input-group col-md-12">
+				<input type="text"
+							class="typeahead"
+							id="especiales-typeahead"
+							placeholder="Search text"
+							data-id="null" />
+				<span class="input-group-btn">
+						<i class="glyphicon glyphicon-search"></i>
+				</span>
+		</div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+		new Mytypeahead ( {
+			table  						: "platos",
+			field  						: "nombre",
+			selector					: "#especiales-typeahead",
+			url 							: "/search.JSON",
+			minLength					: 4
+		} )
+  } )
+</script>
