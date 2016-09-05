@@ -22,15 +22,13 @@
 
 <div id="custom-search-input">
 		<div class="input-group col-md-12">
-			<input type="hidden" name="id_promocion" value="">
-				<input type="text"
-							class="typeahead"
-							id="especiales-typeahead"
-							placeholder="Search text"
-							data-id="null" />
-				<span class="input-group-btn">
-						<i class="glyphicon glyphicon-search"></i>
-				</span>
+			<input type="hidden" name="id_promocion" class="field">
+														<input type="text" class="form-control"
+																		id="typeahead-promociones"
+																		data-special="data-id"
+																		data-provider="typeahead"
+																		required
+																		placeholder="Nombre de la promoci&oacute;n">
 		</div>
 </div>
 
