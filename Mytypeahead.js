@@ -13,7 +13,7 @@
 																dataType:"JSON",
 																data : {
 																	table:settings.table,
-																	fields:settings.field
+																	fields:settings.fields
 																},
 																success : function(data){
 																	if ( data && data.source.length > 0 ){
