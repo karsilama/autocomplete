@@ -21,9 +21,10 @@
 																				source: data.source,
 																				displayField: 'name',
 																				updater : function(item){
-																																										self.selector.parent().find("input[type=\"hidden\"]").val( item.id )
-
+																								self.selector.parent().find("input[type=\"hidden\"]").val( item.id )
 																					self.selector.attr("placeholder",item.name )
+																					self.selector.removeAttr("required")
+																		
 																				}
 																			} )
 																	} else {
