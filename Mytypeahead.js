@@ -21,7 +21,8 @@
 																				source: data.source,
 																				displayField: 'name',
 																				updater : function(item){
-																					self.selector.attr("data-id", item.id )
+																																										self.selector.parent().find("input[type=\"hidden\"]").val( item.id )
+
 																					self.selector.attr("placeholder",item.name )
 																				}
 																			} )
