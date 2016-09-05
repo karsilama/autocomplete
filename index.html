@@ -5,11 +5,10 @@
 
 	3)
 		new Mytypeahead ( {
-			table  						: "", db table
-			field  						: "", // db field name
-			selector					: "", // input search
-			url 							: "", // prefilter elements
-			minLength					: 4
+			table  						: "platos",
+			fields  					: "nombre,descripcion",
+			selector					: "#typeahead-platos",
+			url 							: "/sa_v2/php.get.by.fields.php"
 		} )
 -->
 
@@ -40,8 +39,7 @@
 			table  						: "platos",
 			field  						: "nombre",
 			selector					: "#especiales-typeahead",
-			url 							: "/search.JSON",
-			minLength					: 4
+			url 							: "/search.JSON"
 		} )
   } )
 </script>
