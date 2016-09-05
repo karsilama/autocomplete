@@ -13,8 +13,7 @@
 																dataType:"JSON",
 																data : {
 																	table:settings.table,
-																	field:settings.field,
-																	string: $.trim(self.selector.val())
+																	fields:settings.field
 																},
 																success : function(data){
 																	if ( data && data.source.length > 0 ){
