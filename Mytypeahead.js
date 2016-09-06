@@ -1,11 +1,33 @@
 
 			function Mytypeahead( settings ) {
 
+				if( ! window.salgado ){
+					window.salgado = { data : {} } ;
+				}
+
+				window.salgado.data[settings.table] = false ;
+
 				var self = this,
 
-						request = false,
+						request = false;
+
+						self.get = function(source) {
+							self.selector.typeahead( {
+									source: source,
+									displayField: 'name',
+									updater : function(item){
+										self.selector.parent().find("input[type=\"hidden\"]").val( item.id )
+										self.selector.attr("placeholder",item.name )
+										self.selector.removeAttr("required")
+									}
+								} )
+						}
 
 						search = function(){
+							if( window.salgado.data[settings.table] ){
+								self.get( window.salgado.data[settings.table] );
+								return false ;
+							}
 													$.ajax(
 															{
 																url:settings.url,
@@ -16,17 +38,9 @@
 																	fields:settings.fields
 																},
 																success : function(data){
-																	if ( data && data.source.length > 0 ){
-																		self.selector.typeahead( {
-																				source: data.source,
-																				displayField: 'name',
-																				updater : function(item){
-																								self.selector.parent().find("input[type=\"hidden\"]").val( item.id )
-																					self.selector.attr("placeholder",item.name )
-																					self.selector.removeAttr("required")
-																		
-																				}
-																			} )
+																	var source = data.rows;
+																	if ( data && source.length > 0 ){
+																		self.get(source);
 																	} else {
 																		self.selector.attr("placeholder",self.placeholder )
 																	}
